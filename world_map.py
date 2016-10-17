@@ -17,7 +17,7 @@ ax.add_feature(cartopy.feature.COASTLINE)
 ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.5)
 ax.set_extent([-180, 180, -90, 90])
 
-
+# choose type of map
 shpfilename = shpreader.natural_earth(resolution='110m',
                                       category='cultural',
                                       name='admin_0_countries')
@@ -73,3 +73,5 @@ plt.legend([CRS1, CRS2, CRS3, CRS4, CRS5, CRS6, CRS7, CRS8, CRS9, CRS10,CRS11, C
 
 # show plot
 plt.show()
+
+# more information on cartopy here: http://scitools.org.uk/cartopy/
