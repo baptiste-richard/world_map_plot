@@ -48,28 +48,11 @@ for country in countries:
                                   label=country.attributes['adm0_a3'])
                                   
                                   
-# create the legend
-CRS1 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[0], green_CRS[0], blue_CRS[0]))
-CRS2 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[1], green_CRS[1], blue_CRS[1]))
-CRS3 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[2], green_CRS[2], blue_CRS[2]))
-CRS4 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[3], green_CRS[3], blue_CRS[3]))
-CRS5 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[4], green_CRS[4], blue_CRS[4]))
-CRS6 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[5], green_CRS[5], blue_CRS[5]))
-CRS7 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[6], green_CRS[6], blue_CRS[6]))
-CRS8 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[7], green_CRS[7], blue_CRS[7]))
-CRS9 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[8], green_CRS[8], blue_CRS[8]))
-CRS10 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[9], green_CRS[9], blue_CRS[9]))
-CRS11 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[10], green_CRS[10], blue_CRS[10]))
-CRS12 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[11], green_CRS[11], blue_CRS[11]))
-CRS13 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[12], green_CRS[12], blue_CRS[12]))
-CRS14 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[13], green_CRS[13], blue_CRS[13]))
-CRS15 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[14], green_CRS[14], blue_CRS[14]))
-CRS16 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[15], green_CRS[15], blue_CRS[15]))
-CRS17 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[16], green_CRS[16], blue_CRS[16]))
-CRS18 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[17], green_CRS[17], blue_CRS[17]))
-CRS19 = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[18], green_CRS[18], blue_CRS[18]))
+# create the legend using dynamic variable names for CRS01 ... CRS19
+for i in range(1,20):
+    exec("CRS%02d = mpatches.Rectangle((0, 0), 0.25, 0.25, facecolor=(red_CRS[i-1], green_CRS[i-1], blue_CRS[i-1]))" %i);  
 labels = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19']
-plt.legend([CRS1, CRS2, CRS3, CRS4, CRS5, CRS6, CRS7, CRS8, CRS9, CRS10,CRS11, CRS12, CRS13, CRS14, CRS15, CRS16, CRS17, CRS18, CRS19], labels, loc=3,prop={'size':10}, ncol = 2, fancybox=True,title="CRS Scores")
+plt.legend([CRS01, CRS02, CRS03, CRS04, CRS05, CRS06, CRS07, CRS08, CRS09, CRS10, CRS11, CRS12, CRS13, CRS14, CRS15, CRS16, CRS17, CRS18, CRS19], labels, loc=3,prop={'size':10}, ncol = 2, fancybox=True,title="CRS Scores")
 
 # show plot
 plt.show()
